@@ -1,0 +1,42 @@
+.homepage-wrapper {
+    width: 80%;
+    flex-wrap: wrap;
+}
+
+.homepage-wrapper > div {
+    flex: 0 0 33%;
+}
+
+@media screen and (max-width: 1100px) {
+    .homepage-wrapper > div {
+        flex: 0 0 50%;
+    }
+
+    .homepage-wrapper {
+        width: 100%;
+        overflow-y: auto;
+    }
+
+    ::-webkit-scrollbar {
+        width: 20px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background-color: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: #d6dee1;
+        border-radius: 20px;
+        border: 6px solid transparent;
+        background-clip: content-box;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: #a8bbbf;
+    }
+
+    .extra-content-layout-style {
+        justify-content: flex-start;
+    }
+}

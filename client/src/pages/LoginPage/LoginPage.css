@@ -1,0 +1,13 @@
+.login-wrapper {
+    background-color: #e5e2e2;
+    border-radius: 20px;
+    height: 600px;
+    width: 400px;
+    padding: 30px;
+}
+
+.logo {
+    width: 250px;
+    height: 170px;
+    margin: 20px 0;
+}

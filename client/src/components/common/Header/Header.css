@@ -1,0 +1,10 @@
+.header-nav {
+    padding: 5px;
+    background-color: #e87e04;
+    height: 70px;
+}
+
+.header-title {
+    color: #fff;
+    cursor: pointer;
+}

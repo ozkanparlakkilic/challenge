@@ -26,7 +26,7 @@ input:-webkit-autofill:focus {
     transition-delay: 9999s !important;
 }
 
-.error-text {
+.error_text {
     color: red;
     margin: 10px 0;
 }

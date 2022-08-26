@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Button from '../../components/common/Button/Button';
 import Input from '../../components/common/Input/Input';
-import './LoginPage.css';
+import styles from './LoginPage.module.css';
 import { useNavigate } from 'react-router-dom';
 import checkEmptyInputValue from '../../utils/checkEmptyInputValue';
 import ContentLayout from '../../layouts/ContentLayout/ContentLayout';
@@ -30,10 +30,10 @@ const LoginPage = () => {
 
     return (
         <ContentLayout>
-            <div className="login-wrapper d-flex flex-direction-column">
+            <div className={`d-flex flex-direction-column ${styles.login_wrapper}`}>
                 <div>
                     <img
-                        className="logo"
+                        className={styles.logo}
                         src="https://upload.wikimedia.org/wikipedia/commons/d/db/Challenge_Logo.png"
                         alt="Challenge Me"
                     />

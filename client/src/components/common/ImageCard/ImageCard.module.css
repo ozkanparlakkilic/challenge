@@ -4,13 +4,13 @@
     cursor: pointer;
 }
 
-.image-wrapper {
+.image_wrapper {
     margin: 20px 0;
     display: flex;
     justify-content: center;
 }
 
-.image-box {
+.image_box {
     width: 200px;
     height: 200px;
     display: flex;
@@ -22,15 +22,15 @@
     padding: 10px;
 }
 
-.image-box:hover {
+.image_box:hover {
     background-color: #d6d6d6;
 }
 
-.image-box:hover > h2 {
+.image_box:hover > h2 {
     color: #fff;
 }
 
-.image-title {
+.image_title {
     margin: 0.75rem;
     color: #d6d6d6;
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import './Button.css';
+import styles from './Button.module.css';
 
 interface Props {
     title: string;
@@ -17,7 +17,11 @@ const Button = (props: Props) => {
     };
 
     return (
-        <button className={`${classname ? classname : ''} btn`} style={style} onClick={(e) => handlerClick(e)}>
+        <button
+            className={`${classname ? classname : ''} ${styles.btn}`}
+            style={style}
+            onClick={(e) => handlerClick(e)}
+        >
             {title}
         </button>
     );

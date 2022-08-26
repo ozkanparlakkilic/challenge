@@ -1,18 +1,18 @@
-.homepage-wrapper {
+.homepage_wrapper {
     width: 80%;
     flex-wrap: wrap;
 }
 
-.homepage-wrapper > div {
+.homepage_wrapper > div {
     flex: 0 0 33%;
 }
 
 @media screen and (max-width: 1100px) {
-    .homepage-wrapper > div {
+    .homepage_wrapper > div {
         flex: 0 0 50%;
     }
 
-    .homepage-wrapper {
+    .homepage_wrapper {
         width: 100%;
         overflow-y: auto;
     }
@@ -36,7 +36,7 @@
         background-color: #a8bbbf;
     }
 
-    .extra-content-layout-style {
+    .extra_content_layout_style {
         justify-content: flex-start;
     }
 }

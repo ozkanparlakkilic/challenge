@@ -1,5 +1,5 @@
 import React from 'react';
-import './HomePage.css';
+import styles from './HomePage.module.css';
 import ImageCard from '../../components/common/ImageCard/ImageCard';
 import QuizImage from '../../assets/quiz.png';
 import AskUsImage from '../../assets/ask-us.png';
@@ -13,10 +13,9 @@ import Friends from '../../assets/friends.png';
 import ContentLayout from '../../layouts/ContentLayout/ContentLayout';
 
 const HomePage = () => {
-
     return (
-        <ContentLayout classname="extra-content-layout-style">
-            <div className="d-flex homepage-wrapper">
+        <ContentLayout classname={styles.extra_content_layout_style}>
+            <div className={`d-flex ${styles.homepage_wrapper}`}>
                 <ImageCard source={QuizImage} title="Quiz" />
                 <ImageCard source={EducationImage} title="Education" />
                 <ImageCard source={JokerImage} title="Joker" />

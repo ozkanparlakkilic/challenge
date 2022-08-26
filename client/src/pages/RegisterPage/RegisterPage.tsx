@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Button from '../../components/common/Button/Button';
 import Input from '../../components/common/Input/Input';
 import { register } from '../../services/userServices';
-import './RegisterPage.css';
+import styles from './RegisterPage.module.css';
 import { useNavigate } from 'react-router-dom';
 import checkEmptyInputValue from '../../utils/checkEmptyInputValue';
 import validateEmail from '../../utils/validateEmail';
@@ -30,10 +30,10 @@ const RegisterPage = () => {
 
     return (
         <ContentLayout>
-            <div className="register-wrapper d-flex flex-direction-column">
+            <div className={`d-flex flex-direction-column ${styles.register_wrapper}`}>
                 <div>
                     <img
-                        className="logo"
+                        className={styles.logo}
                         src="https://upload.wikimedia.org/wikipedia/commons/d/db/Challenge_Logo.png"
                         alt="Challenge Me"
                     />

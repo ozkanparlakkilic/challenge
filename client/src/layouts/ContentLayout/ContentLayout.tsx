@@ -1,5 +1,5 @@
 import React from 'react';
-import './ContentLayout.css';
+import styles from './ContentLayout.module.css';
 
 interface ChildrenProps {
     children: React.ReactNode;
@@ -11,7 +11,7 @@ const ContentLayout = ({ children, classname }: ChildrenProps) => {
         <div
             className={`${
                 classname ? classname : ''
-            } d-flex flex-direction-column justify-content-center align-items-center h-100 content-layout`}
+            } d-flex flex-direction-column justify-content-center align-items-center h-100 ${styles.content_layout}`}
         >
             {children}
         </div>

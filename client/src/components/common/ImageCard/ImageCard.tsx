@@ -1,5 +1,5 @@
 import React from 'react';
-import './ImageCard.css';
+import styles from './ImageCard.module.css';
 
 interface ImageProps {
     source: string;
@@ -10,10 +10,10 @@ interface ImageProps {
 const ImageCard = (props: ImageProps) => {
     const { source, title, onClick } = props;
     return (
-        <div className="image-wrapper">
-            <div className="image-box" onClick={() => onClick?.()}>
-                <img className="image" src={source} alt={title} />
-                <h2 className="image-title">{title}</h2>
+        <div className={styles.image_wrapper}>
+            <div className={styles.image_box} onClick={() => onClick?.()}>
+                <img className={styles.image} src={source} alt={title} />
+                <h2 className={styles.image_title}>{title}</h2>
             </div>
         </div>
     );

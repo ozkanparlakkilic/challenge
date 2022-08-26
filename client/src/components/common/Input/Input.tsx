@@ -1,5 +1,5 @@
 import React from 'react';
-import './Input.css';
+import styles from './Input.module.css';
 
 interface Props {
     placeholder: string;
@@ -21,14 +21,14 @@ const Input = (props: Props) => {
     return (
         <div className="w-100 d-flex flex-direction-column align-items-start">
             <input
-                className={`${classname ? classname : ''} input`}
+                className={`${classname ? classname : ''} ${styles.input}`}
                 placeholder={placeholder}
                 style={style}
                 type={type}
                 onChange={(e) => handleOnChange?.(e)}
                 autoComplete="off"
             />
-            {error && <span className="error-text">{errorMsg ? errorMsg + ' *' : 'Zorunlu alan *'}</span>}
+            {error && <span className={styles.error_text}>{errorMsg ? errorMsg + ' *' : 'Zorunlu alan *'}</span>}
         </div>
     );
 };

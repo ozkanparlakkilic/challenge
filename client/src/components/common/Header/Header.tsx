@@ -1,9 +1,8 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { IUser } from '../../../@types';
-import { loadStorage } from '../../../utils/loadStorage';
-import BackIcon from '../../icons/BackIcon';
-import HomeIcon from '../../icons/HomeIcon';
+import { loadStorage } from '../../../utils/storage/loadStorage';
+import { BackIcon, HomeIcon } from '../../icons';
 import Button from '../Button/Button';
 import styles from './Header.module.css';
 

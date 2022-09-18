@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { baseUrl } from '../utils/getBaseUrl';
+import { baseUrl } from '../../utils/baseUrl/getBaseUrl';
 
 const login = (username: string, password: string) =>
     axios

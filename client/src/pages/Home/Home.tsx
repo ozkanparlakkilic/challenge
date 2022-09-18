@@ -1,18 +1,20 @@
 import React from 'react';
-import styles from './HomePage.module.css';
-import ImageCard from '../../components/common/ImageCard/ImageCard';
-import QuizImage from '../../assets/quiz.png';
-import AskUsImage from '../../assets/ask-us.png';
-import ChallengeImage from '../../assets/challenge.png';
-import QuestionImage from '../../assets/question.png';
-import LeaderBoardImage from '../../assets/leaderboard.png';
-import InformationImage from '../../assets/information.png';
-import JokerImage from '../../assets/joker.png';
-import EducationImage from '../../assets/education.png';
-import Friends from '../../assets/friends.png';
-import ContentLayout from '../../layouts/ContentLayout/ContentLayout';
+import {
+    AskUsImage,
+    ChallengeImage,
+    EducationImage,
+    FriendsImage,
+    InformationImage,
+    JokerImage,
+    LeaderBoardImage,
+    QuestionImage,
+    QuizImage,
+} from '../../assets';
+import { ImageCard } from '../../components/common';
+import { ContentLayout } from '../../layouts';
+import styles from './Home.module.css';
 
-const HomePage = () => {
+const Home = () => {
     return (
         <ContentLayout classname={styles.extra_content_layout_style}>
             <div className={`d-flex ${styles.homepage_wrapper}`}>
@@ -22,7 +24,7 @@ const HomePage = () => {
                 <ImageCard source={QuestionImage} title="Question" />
                 <ImageCard source={ChallengeImage} title="Challenge" />
                 <ImageCard source={LeaderBoardImage} title="LeaderBoard" />
-                <ImageCard source={Friends} title="Friends" />
+                <ImageCard source={FriendsImage} title="Friends" />
                 <ImageCard source={AskUsImage} title="Ask Us" />
                 <ImageCard source={InformationImage} title="Information" />
             </div>
@@ -30,4 +32,4 @@ const HomePage = () => {
     );
 };
 
-export default HomePage;
+export default Home;

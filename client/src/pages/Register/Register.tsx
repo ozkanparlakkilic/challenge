@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
-import Button from '../../components/common/Button/Button';
-import Input from '../../components/common/Input/Input';
-import { register } from '../../services/userServices';
-import styles from './RegisterPage.module.css';
 import { useNavigate } from 'react-router-dom';
-import checkEmptyInputValue from '../../utils/checkEmptyInputValue';
-import validateEmail from '../../utils/validateEmail';
-import ContentLayout from '../../layouts/ContentLayout/ContentLayout';
+import { Button, Input } from '../../components/common';
+import { ContentLayout } from '../../layouts';
+import { register } from '../../services/userServices/userServices';
+import { checkEmptyInputValue, validateEmail } from '../../utils';
+import styles from './Register.module.css';
 
-const RegisterPage = () => {
+const Register = () => {
     const [fullname, setFullname] = useState<string>('');
     const [username, setUsername] = useState<string>('');
     const [email, setEmail] = useState<string>('');
@@ -81,4 +79,4 @@ const RegisterPage = () => {
     );
 };
 
-export default RegisterPage;
+export default Register;

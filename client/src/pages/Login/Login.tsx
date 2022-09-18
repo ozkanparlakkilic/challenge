@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
-import Button from '../../components/common/Button/Button';
-import Input from '../../components/common/Input/Input';
-import styles from './LoginPage.module.css';
 import { useNavigate } from 'react-router-dom';
-import checkEmptyInputValue from '../../utils/checkEmptyInputValue';
-import ContentLayout from '../../layouts/ContentLayout/ContentLayout';
-import { login } from '../../services/userServices';
+import { Button, Input } from '../../components/common';
+import { ContentLayout } from '../../layouts';
+import { login } from '../../services/userServices/userServices';
+import { checkEmptyInputValue } from '../../utils';
+import styles from './Login.module.css';
 
-const LoginPage = () => {
+const Login = () => {
     const [username, setUsername] = useState<string>('');
     const [password, setPassword] = useState<string>('');
     const [error, setError] = useState<boolean>(false);
@@ -67,4 +66,4 @@ const LoginPage = () => {
     );
 };
 
-export default LoginPage;
+export default Login;

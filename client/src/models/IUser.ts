@@ -5,7 +5,7 @@ export default interface IUser {
     email: string;
     password: string;
     isAdmin: boolean;
-    friends: IUser['_id'] | IUser;
+    friends: IUser['_id'] | [];
     token: string;
     totalPoint: number;
 }

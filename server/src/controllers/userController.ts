@@ -5,7 +5,7 @@ import User, { IUser } from '../models/userModel';
 
 // @route   POST /api/user/register
 const registerUser = asyncHandler(async (req, res) => {
-    const { fullname, username, email, password, isAdmin, friends, totalPoint } = req.body;
+    const { fullname, username, email, password } = req.body;
 
     const userExists: IUser | null = await User.findOne({
         $or: [{ email: email }, { username: username }],
@@ -20,13 +20,13 @@ const registerUser = asyncHandler(async (req, res) => {
         username,
         email,
         password,
-        isAdmin,
-        friends,
-        totalPoint,
+        isAdmin: false,
+        friends: [],
+        totalPoint: 0,
     });
 
     if (user) {
-        const { _id } = user;
+        const { _id, isAdmin, friends, totalPoint } = user;
         const token = generateToken(_id);
         res.status(201).json({
             _id,

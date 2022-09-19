@@ -10,7 +10,6 @@ import { Home, Login, Register } from './pages';
 function App() {
     const user = loadStorage<IUser>('user');
 
-    console.log(user);
     return (
         <div className="App">
             <Router>

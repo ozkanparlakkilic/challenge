@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renderings should render the child component 1`] = `
+<div>
+  <div
+    class="flex-1 main_layout"
+  >
+    &lt;div&gt;Testing&lt;/div&gt;
+  </div>
+</div>
+`;

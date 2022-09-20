@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Button, Input } from '../../components/common';
-import { ContentLayout } from '../../layouts';
+import { Button, Form, Input, Logo } from '../../components/common';
+import { AuthLayout, ContentLayout } from '../../layouts';
 import { register } from '../../services/userServices/userServices';
 import { checkEmptyInputValue, validateEmail } from '../../utils';
-import styles from './Register.module.css';
 
 const Register = () => {
     const [fullname, setFullname] = useState<string>('');
@@ -28,53 +27,45 @@ const Register = () => {
 
     return (
         <ContentLayout>
-            <div className={`d-flex flex-direction-column ${styles.register_wrapper}`}>
-                <div>
-                    <img
-                        className={styles.logo}
-                        src="https://upload.wikimedia.org/wikipedia/commons/d/db/Challenge_Logo.png"
-                        alt="Challenge Me"
+            <AuthLayout>
+                <Logo />
+                <Form autoComplete="off">
+                    <Input
+                        placeholder="Ad soyad giriniz"
+                        type="text"
+                        onChange={(e) => setFullname(e)}
+                        error={!fullname && error}
+                        errorMsg="Ad Soyad zorunlu"
                     />
-                </div>
-                <div className="d-flex flex-1 align-items-center">
-                    <form className="w-100" autoComplete="off">
-                        <Input
-                            placeholder="Ad soyad giriniz"
-                            type="text"
-                            onChange={(e) => setFullname(e)}
-                            error={!fullname && error}
-                            errorMsg="Ad Soyad zorunlu"
-                        />
-                        <Input
-                            placeholder="Kullanıcı adı giriniz"
-                            type="text"
-                            onChange={(e) => setUsername(e)}
-                            error={!username && error}
-                            errorMsg="Kullanıcı zorunlu"
-                        />
-                        <Input
-                            placeholder="Email giriniz"
-                            type="email"
-                            onChange={(e) => setEmail(e)}
-                            error={!validateEmail(email) && error}
-                            errorMsg="Email doğru formatta değil"
-                        />
-                        <Input
-                            placeholder="Password giriniz"
-                            type="password"
-                            onChange={(e) => setPassword(e)}
-                            error={!password && error}
-                            errorMsg="Password zorunlu"
-                        />
-                        <Button
-                            classname="align-self-center"
-                            title="Sign Up"
-                            style={{ width: '50%', margin: '20px' }}
-                            onClick={() => handleClick()}
-                        />
-                    </form>
-                </div>
-            </div>
+                    <Input
+                        placeholder="Kullanıcı adı giriniz"
+                        type="text"
+                        onChange={(e) => setUsername(e)}
+                        error={!username && error}
+                        errorMsg="Kullanıcı zorunlu"
+                    />
+                    <Input
+                        placeholder="Email giriniz"
+                        type="email"
+                        onChange={(e) => setEmail(e)}
+                        error={!validateEmail(email) && error}
+                        errorMsg="Email doğru formatta değil"
+                    />
+                    <Input
+                        placeholder="Password giriniz"
+                        type="password"
+                        onChange={(e) => setPassword(e)}
+                        error={!password && error}
+                        errorMsg="Password zorunlu"
+                    />
+                    <Button
+                        classname="align-self-center"
+                        title="Sign Up"
+                        style={{ width: '50%', margin: '20px' }}
+                        onClick={() => handleClick()}
+                    />
+                </Form>
+            </AuthLayout>
         </ContentLayout>
     );
 };

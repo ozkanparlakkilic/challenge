@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button, Form, Input, Logo } from '../../components/common';
 import { AuthLayout, ContentLayout } from '../../layouts';
-import { login } from '../../services/userServices/userServices';
+import { useAppDispatch } from '../../store/hooks';
+import { userLogin } from '../../store/slices/userSlice';
 import { checkEmptyInputValue } from '../../utils';
 
 const Login = () => {
@@ -10,10 +11,11 @@ const Login = () => {
     const [password, setPassword] = useState<string>('');
     const [error, setError] = useState<boolean>(false);
     const navigate = useNavigate();
+    const dispatch = useAppDispatch();
 
     const handleClick = () => {
         if (checkEmptyInputValue(password)) {
-            login(username, password)
+            dispatch(userLogin({ username, password }))
                 .then((user) => {
                     localStorage.setItem('user', JSON.stringify(user));
                     navigate('/');

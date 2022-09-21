@@ -1,5 +1,5 @@
 import { IUser } from '../../@types';
-import { loadStorage } from '../storage/loadStorage';
+import loadStorage from '../storage/loadStorage';
 
 const mockUser: IUser = {
     _id: '',

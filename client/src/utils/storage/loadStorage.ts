@@ -4,4 +4,4 @@ function loadStorage<T>(item: string): T | null {
     return JSON.parse(localStorageItem);
 }
 
-export { loadStorage };
+export default loadStorage;

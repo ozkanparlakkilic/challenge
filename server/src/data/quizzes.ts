@@ -2,9 +2,9 @@ const quizzes = [
     {
         title: 'Javascript Interviev Questions',
         description: 'In this exam, you will solve the questions asked in javascript job interviews',
-        duration: 300,
-        start_date: new Date('2022-08-22T20:20:00.974+00:00'),
-        end_date: new Date('2022-08-22T20:25:00.974+00:00'),
+        duration: 1800,
+        start_date: new Date('2022-09-21T20:30:00.974+00:00'),
+        end_date: new Date('2022-09-21T21:00:00.974+00:00'),
         isFinish: false,
         questions: [
             {
@@ -31,9 +31,9 @@ const quizzes = [
     {
         title: 'Html Interviev Questions',
         description: 'In this exam, you will solve the questions asked in html job interviews',
-        duration: 300,
-        start_date: new Date('2022-08-22T20:20:00.974+00:00'),
-        end_date: new Date('2022-08-22T20:25:00.974+00:00'),
+        duration: 1800,
+        start_date: new Date('2022-09-21T20:30:00.974+00:00'),
+        end_date: new Date('2022-09-21T21:00:00.974+00:00'),
         isFinish: false,
         questions: [
             {
@@ -60,9 +60,9 @@ const quizzes = [
     {
         title: 'Css Interviev Questions',
         description: 'In this exam, you will solve the questions asked in css job interviews',
-        duration: 300,
-        start_date: new Date('2022-08-22T20:20:00.974+00:00'),
-        end_date: new Date('2022-08-22T20:25:00.974+00:00'),
+        duration: 1800,
+        start_date: new Date('2022-09-21T20:30:00.974+00:00'),
+        end_date: new Date('2022-09-21T21:00:00.974+00:00'),
         isFinish: false,
         questions: [
             {

@@ -1,0 +1,36 @@
+.date-card-wrapper {
+    margin: 10px;
+}
+
+.date-card {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 20px;
+    border-bottom: 3px solid #cacaca;
+    border-right: 3px solid #cacaca;
+    border-left: 3px solid #cacaca;
+    padding: 10px 20px;
+    border-radius: 5px;
+    width: 75px;
+}
+
+.quiz-start-date {
+    border-top: 5px solid #24cb24;
+}
+
+.quiz-end-date {
+    border-top: 5px solid #fc2d2d;
+}
+
+.date-day {
+    font-size: 30px;
+    font-weight: 600;
+    margin: 5px 0;
+}
+
+.date-title {
+    font-size: 20px;
+    font-weight: 400;
+    margin: 5px 0;
+    text-align: center;
+}

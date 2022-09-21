@@ -1,10 +1,9 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { IUser } from '../../../@types';
-import { loadStorage } from '../../../utils/storage/loadStorage';
 import { BackIcon, HomeIcon } from '../../icons';
-import Button from '../Button/Button';
 import styles from './Header.module.css';
+import { useAppSelector } from '../../../store/hooks';
+import Button from '../Button/Button';
 
 const Header = () => {
     const navigate = useNavigate();
@@ -12,7 +11,7 @@ const Header = () => {
     const pathArray = ['/', '/login', '/register'];
     const pathSet = new Set(pathArray);
 
-    const user = loadStorage<IUser>('user');
+    const user = useAppSelector(state => state.user);
 
     const handleClick = (e: any) => {
         e.preventDefault();
@@ -31,7 +30,7 @@ const Header = () => {
                         Challenge Me
                     </h3>
                 </div>
-                {!user ? (
+                {!user.data ? (
                     <div className="d-flex flex-1 align-items-center justify-content-end">
                         <Button title="Sign In" onClick={() => navigate('/login')} />
                         <Button title="Sign Up" onClick={() => navigate('/register')} />

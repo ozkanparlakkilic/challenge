@@ -1,21 +1,20 @@
 import React from 'react';
 import './App.css';
-import Header from './components/common/Header/Header';
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
-import MainLayout from './layouts/MainLayout/MainLayout';
-import { loadStorage } from './utils/storage/loadStorage';
-import { IUser } from './@types';
-import { Home, Login, Register } from './pages';
+import { Home, Login, QuizList, Register } from './pages';
+import { Header } from './components/common';
+import { MainLayout } from './layouts';
+import { useAppSelector } from './store/hooks';
 
 function App() {
-    const user = loadStorage<IUser>('user');
+    const user = useAppSelector(state => (state.user))
 
     return (
         <div className="App">
             <Router>
                 <Header />
                 <MainLayout>
-                    {!user ? (
+                    {!user.data ? (
                         <Routes>
                             <Route path="/" element={<Login />} />
                             <Route path="login" element={<Login />} />
@@ -24,6 +23,7 @@ function App() {
                     ) : (
                         <Routes>
                             <Route path="/" element={<Home />} />
+                            <Route path="quiz-list" element={<QuizList />} />
                         </Routes>
                     )}
                 </MainLayout>

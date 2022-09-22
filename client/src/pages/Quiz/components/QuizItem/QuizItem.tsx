@@ -1,21 +1,21 @@
 import React from 'react';
-import './QuizCard.css';
+import './QuizItem.css';
 import { useNavigate } from 'react-router-dom';
 import DateCard from '../DateCard/DateCard';
 import { IQuiz } from '../../../../@types';
 
-interface QuizCardProps {
+interface QuizItemProps {
     quiz: IQuiz;
     style?: Object;
 }
 
-const QuizCard = (props: QuizCardProps) => {
+const QuizItem = (props: QuizItemProps) => {
     const { quiz, style } = props;
     const navigate = useNavigate();
 
     return (
         <div
-            className="d-flex quiz-card"
+            className="d-flex quiz-item"
             onClick={() => navigate(`quiz-detail/${quiz._id}`, { replace: true })}
             style={style}
         >
@@ -33,4 +33,4 @@ const QuizCard = (props: QuizCardProps) => {
     );
 };
 
-export default QuizCard;
+export default QuizItem;

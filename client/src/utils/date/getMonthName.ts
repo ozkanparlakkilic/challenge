@@ -13,7 +13,8 @@ const monthNames = [
     'December',
 ];
 
-const getMonthName = (month: number): string => {
+const getMonthName = (month: number): string | null => {
+    if (month < 1 || month > monthNames.length + 1) return null;
     return monthNames[month - 1];
 };
 

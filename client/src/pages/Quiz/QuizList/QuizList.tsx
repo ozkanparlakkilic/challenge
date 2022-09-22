@@ -4,7 +4,7 @@ import { Loading, PageTitle } from '../../../components/common';
 import { ContentLayout, ScrollContainer } from '../../../layouts';
 import { getAllQuiz } from '../../../services/quizServices/quizService';
 import { useAppSelector } from '../../../store/hooks';
-import { QuizCard } from '../components';
+import { QuizItem } from '../components';
 import './QuizList.css';
 
 const QuizList = () => {
@@ -29,7 +29,7 @@ const QuizList = () => {
             {loading ? (
                 <ScrollContainer>
                     <div className="d-flex flex-direction-column justify-content-center align-items-center quiz-list">
-                        {quizzes && quizzes.map((quiz, index) => <QuizCard key={index} quiz={quiz} />)}
+                        {quizzes && quizzes.map((quiz, index) => <QuizItem key={index} quiz={quiz} />)}
                     </div>
                 </ScrollContainer>
             ) : (

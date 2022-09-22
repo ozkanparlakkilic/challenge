@@ -1,4 +1,4 @@
-import QuizCard from './QuizCard/QuizCard';
+import QuizItem from './QuizItem/QuizItem';
 import DateCard from './DateCard/DateCard';
 
-export { QuizCard, DateCard };
+export { QuizItem, DateCard };

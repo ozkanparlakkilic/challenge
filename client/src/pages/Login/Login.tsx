@@ -49,7 +49,7 @@ const Login = () => {
                     />
                     <Button
                         classname="align-self-center"
-                        title="Sign Up"
+                        title="Sign In"
                         style={{ width: '50%', margin: '20px' }}
                         onClick={() => handleClick()}
                     />

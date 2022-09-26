@@ -4,10 +4,9 @@ import { Loading, PageTitle } from '../../../components/common';
 import { ContentLayout, ScrollContainer } from '../../../layouts';
 import { getAllQuiz } from '../../../services/quizServices/quizService';
 import { useAppSelector } from '../../../store/hooks';
-import { QuizItem } from '../components';
-import './QuizList.css';
+import { QuizItem, QuizList } from '../components';
 
-const QuizList = () => {
+const Quizzes = () => {
     const [loading, setLoading] = useState<boolean>(false);
     const [quizzes, setQuizzes] = useState<Array<IQuiz>>([]);
     const user = useAppSelector((state) => state.user);
@@ -28,9 +27,9 @@ const QuizList = () => {
             <PageTitle title="Quiz List" />
             {loading ? (
                 <ScrollContainer>
-                    <div className="d-flex flex-direction-column justify-content-center align-items-center quiz-list">
+                    <QuizList>
                         {quizzes && quizzes.map((quiz, index) => <QuizItem key={index} quiz={quiz} />)}
-                    </div>
+                    </QuizList>
                 </ScrollContainer>
             ) : (
                 <Loading />
@@ -39,4 +38,4 @@ const QuizList = () => {
     );
 };
 
-export default QuizList;
+export default Quizzes;

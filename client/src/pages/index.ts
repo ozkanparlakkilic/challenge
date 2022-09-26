@@ -1,6 +1,6 @@
 import Login from './Login/Login';
 import Register from './Register/Register';
 import Home from './Home/Home';
-import QuizList from './Quiz/QuizList/QuizList';
+import Quizzes from './Quiz/Quizzes/Quizzes';
 
-export { Login, Register, Home, QuizList };
+export { Login, Register, Home, Quizzes };

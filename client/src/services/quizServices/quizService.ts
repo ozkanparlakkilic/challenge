@@ -8,4 +8,10 @@ const getAllQuiz = (userId: string | undefined): Promise<Array<IQuiz>> =>
         .then((res) => res.data)
         .catch((err) => console.log(err));
 
-export { getAllQuiz };
+const getQuizDetail = (quizId: string | undefined): Promise<IQuiz> =>
+    axios
+        .get(`${baseUrl}/api/quizzes/quiz-detail/${quizId}`)
+        .then((res) => res.data)
+        .catch((err) => console.log(err));
+
+export { getAllQuiz, getQuizDetail };

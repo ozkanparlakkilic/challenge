@@ -28,7 +28,7 @@ const userSlice = createSlice({
     name: 'user',
     initialState: initialState,
     reducers: {
-        setData: (state) => {
+        setUserData: (state) => {
             state.data = loadStorage<IUser | null>('user');
             setAuthHeader(state.data?.token || undefined);
         },
@@ -50,5 +50,5 @@ const userSlice = createSlice({
     },
 });
 
-export const { setData } = userSlice.actions;
+export const { setUserData } = userSlice.actions;
 export default userSlice.reducer;

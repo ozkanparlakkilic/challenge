@@ -30,7 +30,7 @@ const Home = () => {
                 <ImageCard source={LeaderBoardImage} title="LeaderBoard" />
                 <ImageCard source={FriendsImage} title="Friends" />
                 <ImageCard source={AskUsImage} title="Ask Us" />
-                <ImageCard source={InformationImage} title="Information" />
+                <ImageCard source={InformationImage} title="Information" onClick={() => navigate("information")}/>
             </div>
         </ContentLayout>
     );

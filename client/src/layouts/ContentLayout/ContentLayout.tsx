@@ -11,7 +11,7 @@ const ContentLayout = ({ children, classname }: ChildrenProps) => {
         <div
             className={`${
                 classname ? classname : ''
-            } d-flex flex-direction-column justify-content-center align-items-center h-100 ${styles.content_layout}`}
+            } ${styles.content_layout}`}
         >
             {children}
         </div>

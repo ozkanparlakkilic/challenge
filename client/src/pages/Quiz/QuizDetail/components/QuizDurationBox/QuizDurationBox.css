@@ -1,0 +1,9 @@
+.quiz-duration-box {
+    display: flex;
+    align-items: center;
+}
+
+.quiz-duration-text {
+    font-size: 20px;
+    padding: 10px 0;
+}

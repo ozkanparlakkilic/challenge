@@ -1,6 +1,11 @@
 import React from 'react';
 
-const Logo = () => {
+interface LogoProps {
+    classname?: string,
+    style?: object | undefined
+}
+
+const Logo = ({classname,style}:LogoProps) => {
     return (
         <div>
             <img
@@ -8,7 +13,8 @@ const Logo = () => {
                 height="170px"
                 src="https://upload.wikimedia.org/wikipedia/commons/d/db/Challenge_Logo.png"
                 alt="Challenge Me"
-                style={{ margin: "40px 0" }}
+                style={style}
+                className={`${classname ?? ''}`}
             />
         </div>
     );

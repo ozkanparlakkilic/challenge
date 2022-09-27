@@ -4,7 +4,7 @@ import { Loading, PageTitle } from '../../../components/common';
 import { ContentLayout, ScrollContainer } from '../../../layouts';
 import { getAllQuiz } from '../../../services/quizServices/quizService';
 import { useAppSelector } from '../../../store/hooks';
-import { QuizItem, QuizList } from '../components';
+import { QuizItem, QuizList } from './components';
 
 const Quizzes = () => {
     const [loading, setLoading] = useState<boolean>(false);

@@ -1,7 +1,12 @@
 import express from 'express';
 const router = express.Router();
 
-import { getAllQuizzes, getQuizById, getQuizByIdWithQuestions, getQuizBySolverId } from '../controllers/quizController';
+import {
+    getAllQuizzes,
+    getQuizById,
+    getQuizByIdWithQuestions,
+    getQuizBySolverId,
+} from '../../controllers/quiz-controller/quizController';
 
 router.route('/').get(getAllQuizzes);
 router.route('/quiz-detail/:id').get(getQuizById);

@@ -1,6 +1,5 @@
 import asyncHandler from 'express-async-handler';
-import HttpException from '../helpers/exceptions/HttpException';
-import Quiz, { IQuiz } from '../models/quizModel';
+import Quiz, { IQuiz } from '../../models/quizModel';
 
 const getAllQuizzes = asyncHandler(async (req, res) => {
     const currentDate = new Date().getTime() + Math.abs(new Date().getTimezoneOffset() * 60000);
@@ -24,9 +23,9 @@ const getQuizById = asyncHandler(async (req, res) => {
         'title description duration start_date end_date',
     );
     if (quiz) {
-        res.json(quiz);
+        res.status(200).json(quiz);
     } else {
-        throw new HttpException(404, 'Quiz not found');
+        res.status(404).json('Quiz not found');
     }
 });
 
@@ -38,9 +37,9 @@ const getQuizByIdWithQuestions = asyncHandler(async (req, res) => {
         const newDuration = (quiz.end_date.getTime() - currentDate) / 1000;
 
         const newQuiz = await Quiz.findByIdAndUpdate(req.params.id, { duration: newDuration }, { new: true });
-        res.json(newQuiz);
+        res.status(200).json(newQuiz);
     } else {
-        throw new HttpException(404, 'Quiz not found');
+        res.status(404).json('Quiz not found');
     }
 });
 
@@ -52,9 +51,9 @@ const getQuizBySolverId = asyncHandler(async (req, res) => {
     );
 
     if (quiz) {
-        res.json(quiz);
+        res.status(200).json(quiz);
     } else {
-        throw new HttpException(404, 'Quiz not found');
+        res.status(404).json('Quiz not found');
     }
 });
 

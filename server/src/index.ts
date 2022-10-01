@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import dbConn from './config/dbConn';
 import routes from './routes';
+import bodyParser from 'body-parser';
 
 dotenv.config();
 dbConn();
@@ -10,7 +11,8 @@ dbConn();
 const app: express.Application = express();
 
 app.use(express.json());
-
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 app.use(cors());
 
 app.use('/api', routes);

@@ -14,4 +14,4 @@ const Form = (props: FormProps) => {
   )
 }
 
-export default Form
+export default React.memo(Form)

@@ -5,7 +5,7 @@ interface Props {
     title: string;
     style?: object;
     classname?: string | null;
-    onClick: () => void;
+    onClick?: () => void;
 }
 
 const Button = (props: Props) => {
@@ -13,7 +13,7 @@ const Button = (props: Props) => {
 
     const handlerClick = (e: any) => {
         e.preventDefault();
-        onClick();
+        onClick?.();
     };
 
     return (
@@ -27,4 +27,4 @@ const Button = (props: Props) => {
     );
 };
 
-export default Button;
+export default React.memo(Button);

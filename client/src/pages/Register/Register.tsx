@@ -2,18 +2,19 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button, Form, Input, Logo } from '../../components/common';
 import { AuthLayout, ContentLayout } from '../../layouts';
-import { register } from '../../services/userServices/userServices';
+import { IUserSignInCredendials } from '../../models';
+import { register } from '../../services/auth-services/authServices';
 import { checkEmptyInputValue, validateEmail } from '../../utils';
 
+const initialUserSignInCredendials = {fullname: '', username: '', email: '', password: ''}
+
 const Register = () => {
-    const [fullname, setFullname] = useState<string>('');
-    const [username, setUsername] = useState<string>('');
-    const [email, setEmail] = useState<string>('');
-    const [password, setPassword] = useState<string>('');
+    const [formData, setFormData] = useState<IUserSignInCredendials>(initialUserSignInCredendials);
     const [error, setError] = useState<boolean>(false);
     const navigate = useNavigate();
 
     const handleClick = () => {
+        const {fullname, username, email, password } = formData;
         if (checkEmptyInputValue(fullname, username, password) && validateEmail(email)) {
             register(fullname, username, email, password)
                 .then(() => navigate('/'))
@@ -25,6 +26,12 @@ const Register = () => {
         }
     };
 
+    const handleChangeInput = (e: any) => {
+        setFormData({...formData, [e.target.name]: e.target.value})
+    }
+
+    const { fullname, username, email, password } = formData;
+
     return (
         <ContentLayout>
             <AuthLayout>
@@ -33,28 +40,32 @@ const Register = () => {
                     <Input
                         placeholder="Ad soyad giriniz"
                         type="text"
-                        onChange={(e) => setFullname(e)}
+                        name="fullname"
+                        onChange={(e) => handleChangeInput(e)}
                         error={!fullname && error}
                         errorMsg="Ad Soyad zorunlu"
                     />
                     <Input
                         placeholder="Kullanıcı adı giriniz"
                         type="text"
-                        onChange={(e) => setUsername(e)}
+                        name="username"                        
+                        onChange={(e) => handleChangeInput(e)}
                         error={!username && error}
                         errorMsg="Kullanıcı zorunlu"
                     />
                     <Input
                         placeholder="Email giriniz"
                         type="email"
-                        onChange={(e) => setEmail(e)}
+                        name="email"
+                        onChange={(e) => handleChangeInput(e)}
                         error={!validateEmail(email) && error}
                         errorMsg="Email doğru formatta değil"
                     />
                     <Input
                         placeholder="Password giriniz"
                         type="password"
-                        onChange={(e) => setPassword(e)}
+                        name="password"
+                        onChange={(e) => handleChangeInput(e)}
                         error={!password && error}
                         errorMsg="Password zorunlu"
                     />

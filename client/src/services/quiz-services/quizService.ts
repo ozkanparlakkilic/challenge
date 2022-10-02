@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { IQuiz } from '../../@types';
+import { IQuiz } from '../../models';
 import { baseUrl } from '../../utils';
 
 const getAllQuiz = (userId: string | undefined): Promise<Array<IQuiz>> =>

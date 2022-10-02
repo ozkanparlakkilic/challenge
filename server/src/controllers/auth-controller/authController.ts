@@ -39,7 +39,7 @@ const loginController = asyncHandler(async (req, res) => {
 
         await generateTokens(user._id.toString()).then((response: ITokenType) => {
             const { accessToken, refreshToken } = response;
-            res.send({
+            res.status(200).json({
                 userId: user._id.toString(),
                 accessToken,
                 refreshToken,

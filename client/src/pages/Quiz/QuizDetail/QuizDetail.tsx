@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { IQuiz } from '../../../@types';
 import { Button, Loading, PageTitle } from '../../../components/common';
 import { ContentLayout } from '../../../layouts';
-import { getQuizDetail } from '../../../services/quizServices/quizService';
+import { IQuiz } from '../../../models';
+import { getQuizDetail } from '../../../services/quiz-services/quizService';
 import { DateCard } from '../components';
 import { QuizDescription, QuizTitle, QuizDurationBox, QuizDetailContainer } from './components';
 import './QuizDetail.css';

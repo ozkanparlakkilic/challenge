@@ -12,4 +12,4 @@ const AuthLayout = ({children,classname}:AuthLayoutProps) => {
   )
 }
 
-export default AuthLayout
+export default React.memo(AuthLayout)

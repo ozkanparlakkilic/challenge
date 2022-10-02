@@ -18,4 +18,4 @@ const ContentLayout = ({ children, classname }: ChildrenProps) => {
     );
 };
 
-export default ContentLayout;
+export default React.memo(ContentLayout);

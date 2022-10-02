@@ -1,4 +1,4 @@
-import { IUser } from '../../@types';
+import { IUser } from '../../models';
 import loadStorage from '../storage/loadStorage';
 
 const mockUser: IUser = {

@@ -1,9 +1,11 @@
 import React from 'react';
 import styles from './Input.module.css';
+import { useCallback } from 'react';
 
 interface Props {
     placeholder: string;
     type: string;
+    name?: string;
     style?: object;
     classname?: string | null;
     error?: boolean | null;
@@ -12,11 +14,11 @@ interface Props {
 }
 
 const Input = (props: Props) => {
-    const { placeholder, type, style, classname, onChange, error, errorMsg } = props;
+    const { placeholder, type, name, style, classname, onChange, error, errorMsg } = props;
 
-    const handleOnChange = (e: any) => {
-        onChange?.(e.target.value);
-    };
+    const handleOnChange = useCallback((e: any) => {
+        onChange?.(e);
+    },[onChange]);
 
     return (
         <div className="w-100 d-flex flex-direction-column align-items-start">
@@ -25,6 +27,7 @@ const Input = (props: Props) => {
                 placeholder={placeholder}
                 style={style}
                 type={type}
+                name={name}
                 onChange={(e) => handleOnChange?.(e)}
                 autoComplete="off"
             />

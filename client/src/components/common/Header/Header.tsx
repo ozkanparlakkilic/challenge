@@ -2,8 +2,8 @@ import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { BackIcon, HomeIcon } from '../../icons';
 import styles from './Header.module.css';
-import { useAppSelector } from '../../../store/hooks';
 import Button from '../Button/Button';
+import { useAuth } from '../../../hooks/useAuth';
 
 const Header = () => {
     const navigate = useNavigate();
@@ -11,7 +11,7 @@ const Header = () => {
     const pathArray = ['/', '/login', '/register'];
     const pathSet = new Set(pathArray);
 
-    const user = useAppSelector(state => state.user);
+    const { loggedUser: { isSuccess: isLoginSuccesful } } = useAuth()
 
     const handleClick = (e: any) => {
         e.preventDefault();
@@ -30,13 +30,13 @@ const Header = () => {
                         Challenge Me
                     </h3>
                 </div>
-                {!user.data ? (
+                {!isLoginSuccesful ? (
                     <div className="d-flex flex-1 align-items-center justify-content-end">
                         <Button title="Sign In" onClick={() => navigate('/login')} />
                         <Button title="Sign Up" onClick={() => navigate('/register')} />
                     </div>
                 ) : (
-                    <div className="d-flex flex-1 align-items-center justify-content-end"></div>
+                     <div className="d-flex flex-1 align-items-center justify-content-end"></div>
                 )}
             </div>
         </header>

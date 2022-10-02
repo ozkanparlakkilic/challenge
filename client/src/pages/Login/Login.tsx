@@ -1,32 +1,41 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button, Form, Input, Logo } from '../../components/common';
+import { useAuth } from '../../hooks/useAuth';
 import { AuthLayout, ContentLayout } from '../../layouts';
+import { IUserLoginCredendials } from '../../models';
 import { useAppDispatch } from '../../store/hooks';
-import { userLogin } from '../../store/slices/userSlice';
+import { login } from '../../store/slices/auth/authSlice';
 import { checkEmptyInputValue } from '../../utils';
 
+const initialUserLoginCredentials = {username: '', password: ''}
+
 const Login = () => {
-    const [username, setUsername] = useState<string>('');
-    const [password, setPassword] = useState<string>('');
+    const [formData, setFormData] = useState<IUserLoginCredendials>(initialUserLoginCredentials);
     const [error, setError] = useState<boolean>(false);
     const navigate = useNavigate();
     const dispatch = useAppDispatch();
 
+    const { loggedUser: { isSuccess: isLoginSuccesful } } = useAuth();
+
     const handleClick = () => {
-        if (checkEmptyInputValue(password)) {
-            dispatch(userLogin({ username, password }))
-                .then((user) => {
-                    localStorage.setItem('user', JSON.stringify(user));
-                    navigate('/');
-                })
-                .catch(() => {
-                    console.log('Kullanıcı adı veya şifre yanlış');
-                });
+        const { username, password } = formData;
+        if (checkEmptyInputValue(username,password)) {
+            dispatch(login({ username, password }))
         } else {
             setError(true);
         }
     };
+
+    const handleChangeInput = (e: any) => {
+        setFormData({...formData, [e.target.name]: e.target.value})
+    }
+
+    useEffect(() => {
+        if (isLoginSuccesful) {
+            navigate('/');
+        }
+    }, [isLoginSuccesful, navigate]);
 
     return (
         <ContentLayout>
@@ -36,15 +45,17 @@ const Login = () => {
                     <Input
                         placeholder="Kullanıcı adı giriniz"
                         type="text"
-                        onChange={(e) => setUsername(e)}
-                        error={!username && error}
+                        name="username"
+                        onChange={(e) => handleChangeInput(e)}
+                        error={!formData.username && error}
                         errorMsg="Kullanıcı zorunlu"
                     />
                     <Input
                         placeholder="Password giriniz"
                         type="password"
-                        onChange={(e) => setPassword(e)}
-                        error={!password && error}
+                        name="password"
+                        onChange={(e) => handleChangeInput(e)}
+                        error={!formData.password && error}
                         errorMsg="Password zorunlu"
                     />
                     <Button

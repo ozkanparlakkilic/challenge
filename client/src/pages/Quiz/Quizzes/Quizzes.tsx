@@ -1,18 +1,19 @@
 import React, { useEffect, useState } from 'react';
-import { IQuiz } from '../../../@types';
 import { Loading, PageTitle } from '../../../components/common';
+import { useAuth } from '../../../hooks/useAuth';
 import { ContentLayout, ScrollContainer } from '../../../layouts';
-import { getAllQuiz } from '../../../services/quizServices/quizService';
-import { useAppSelector } from '../../../store/hooks';
+import { IQuiz } from '../../../models';
+import { getAllQuiz } from '../../../services/quiz-services/quizService';
 import { QuizItem, QuizList } from './components';
 
 const Quizzes = () => {
     const [loading, setLoading] = useState<boolean>(false);
     const [quizzes, setQuizzes] = useState<Array<IQuiz>>([]);
-    const user = useAppSelector((state) => state.user);
 
+    const { loggedUser: { userId } } = useAuth()
+    
     useEffect(() => {
-        getAllQuiz(user.data?._id)
+        getAllQuiz(userId)
             .then((res) => {
                 setQuizzes(res);
                 setLoading(true);
@@ -20,7 +21,7 @@ const Quizzes = () => {
             .catch(() => {
                 console.log('Bir hata oluştu');
             });
-    }, [user.data]);
+    }, [userId]);
 
     return (
         <ContentLayout>

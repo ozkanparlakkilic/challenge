@@ -7,8 +7,8 @@ interface PageTitleProps {
 
 const PageTitle = (props: PageTitleProps) => {
     const { title } = props;
-
+    
     return <div className="page-title">{title}</div>;
 };
 
-export default PageTitle;
+export default React.memo(PageTitle);

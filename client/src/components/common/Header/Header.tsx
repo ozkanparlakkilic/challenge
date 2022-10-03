@@ -4,6 +4,7 @@ import { BackIcon, HomeIcon } from '../../icons';
 import styles from './Header.module.css';
 import Button from '../Button/Button';
 import { useAuth } from '../../../hooks/useAuth';
+import { useLogout } from '../../../hooks/useLogout';
 
 const Header = () => {
     const navigate = useNavigate();
@@ -12,11 +13,11 @@ const Header = () => {
     const pathSet = new Set(pathArray);
 
     const { loggedUser: { isSuccess: isLoginSuccesful } } = useAuth()
+    const { logout: handleLogout } = useLogout();
 
-    const handleClick = (e: any) => {
-        e.preventDefault();
-        navigate('/');
-    };
+    const logout = () => {
+        handleLogout();
+    }
 
     return (
         <header>
@@ -26,7 +27,7 @@ const Header = () => {
                     {!pathSet.has(location.pathname) && <BackIcon onClick={() => navigate(-1)} />}
                 </div>
                 <div className="d-flex flex-1 justify-content-center">
-                    <h3 className={styles.header_title} onClick={(e) => handleClick(e)}>
+                    <h3 className={styles.header_title} onClick={() => navigate('/')}>
                         Challenge Me
                     </h3>
                 </div>
@@ -36,11 +37,13 @@ const Header = () => {
                         <Button title="Sign Up" onClick={() => navigate('/register')} />
                     </div>
                 ) : (
-                     <div className="d-flex flex-1 align-items-center justify-content-end"></div>
+                    <div className="d-flex flex-1 align-items-center justify-content-end">
+                       <Button title="Logout" onClick={() => logout()} /> 
+                    </div>
                 )}
             </div>
         </header>
     );
 };
 
-export default Header;
+export default React.memo(Header);

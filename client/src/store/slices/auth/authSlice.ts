@@ -29,7 +29,15 @@ export const login = createAsyncThunk(
 const authSlice = createSlice({
     name: 'auth',
     initialState: initialState,
-    reducers: {},
+    reducers: {
+        logout(state: IAuthState) {
+            state.userId = null;
+            state.accessToken = null;
+            state.user = null;
+            state.isSuccess = false;
+            state.errorMessage = null;
+        },
+    },
     extraReducers: (builder) => {
         builder.addCase(login.fulfilled, (state, action: PayloadAction<ILoginResponse>) => {
             state.userId = action.payload.userId;
@@ -43,6 +51,8 @@ const authSlice = createSlice({
         });
     },
 });
+
+export const { logout } = authSlice.actions;
 
 export const selectUser = (state: RootState) => state.auth.user;
 export const selectUserId = (state: RootState) => state.auth.userId;

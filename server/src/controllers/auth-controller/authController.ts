@@ -1,12 +1,18 @@
 import asyncHandler from 'express-async-handler';
-import { ITokenType } from '../../@types';
+import { IAccessToken, IRefreshToken } from '../../@types/token/tokenTypes';
+import { ACCESS_TOKEN_COOKIE_OPTIONS, REFRESH_TOKEN_COOKIE_OPTIONS, TOKEN_ACCESS_KEYS } from '../../constants/contants';
 import {
     createUser,
     findUserByEmailOrUsername,
     findUserByUsername,
 } from '../../data-access/auth-data-access/authDataAccess';
 import { IUser } from '../../models/userModel';
-import { comparePassword, generateTokens, hashPassword } from '../../utils/auth-utils/authUtils';
+import {
+    comparePassword,
+    generateAccessToken,
+    generateRefreshToken,
+    hashPassword,
+} from '../../utils/auth-utils/authUtils';
 
 const registerController = asyncHandler(async (req, res) => {
     const { body } = req;
@@ -37,13 +43,21 @@ const loginController = asyncHandler(async (req, res) => {
             res.status(400).json({ message: 'Invalid password' });
         });
 
-        await generateTokens(user._id.toString()).then((response: ITokenType) => {
-            const { accessToken, refreshToken } = response;
-            res.status(200).json({
-                userId: user._id.toString(),
-                accessToken,
-                refreshToken,
-            });
+        const accessToken = await generateAccessToken(user._id.toString()).then((response: IAccessToken) => {
+            return response;
+        });
+
+        const refreshToken = await generateRefreshToken(user._id.toString()).then((response: IRefreshToken) => {
+            return response;
+        });
+
+        res.cookie(TOKEN_ACCESS_KEYS.USER_ACCESS_KEY, accessToken, ACCESS_TOKEN_COOKIE_OPTIONS);
+        res.cookie(TOKEN_ACCESS_KEYS.USER_REFRESH_KEY, refreshToken, REFRESH_TOKEN_COOKIE_OPTIONS);
+
+        res.status(200).json({
+            userId: user._id.toString(),
+            accessToken,
+            refreshToken,
         });
     }
 });

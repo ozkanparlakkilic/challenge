@@ -1,6 +1,6 @@
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
-import { ITokenType } from '../../@types';
+import { IAccessToken, IRefreshToken } from '../../@types/token/tokenTypes';
 
 const hashPassword = async (password: string): Promise<string> => {
     const salt = await bcrypt.genSalt(10);
@@ -11,15 +11,18 @@ const comparePassword = (password: string, hashedPassword: string): Promise<bool
     return bcrypt.compare(password, hashedPassword);
 };
 
-const generateTokens = async (userId: string): Promise<ITokenType> => {
+const generateAccessToken = async (userId: string): Promise<IAccessToken> => {
     const accessToken = await jwt.sign({ userId }, `${process.env.ACCESS_TOKEN_SECRET}`, {
         expiresIn: '30s',
     });
+    return { accessToken };
+};
 
+const generateRefreshToken = async (userId: string): Promise<IRefreshToken> => {
     const refreshToken = await jwt.sign({ userId }, `${process.env.REFRESH_TOKEN_SECRET}`, {
         expiresIn: '60d',
     });
-    return { accessToken, refreshToken };
+    return { refreshToken };
 };
 
-export { hashPassword, comparePassword, generateTokens };
+export { hashPassword, comparePassword, generateAccessToken, generateRefreshToken };

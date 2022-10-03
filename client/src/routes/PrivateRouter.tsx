@@ -2,7 +2,7 @@ import { Navigate, Outlet } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth';
 import React from 'react';
 
-export const PrivateRoute = ({ component, ...rest }: any) => {
+export const PrivateRoute = () => {
     const {
         loggedUser: { isSuccess, accessToken },
     } = useAuth();

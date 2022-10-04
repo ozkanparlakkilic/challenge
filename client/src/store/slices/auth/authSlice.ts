@@ -3,7 +3,7 @@ import {
     login as userLogin,
     refreshAccessToken as newAccessTokenWithRefreshToken,
 } from '../../../services/auth-services/authServices';
-import { ILoginResponse, IUser } from '../../../models';
+import { IAccessToken, ILoginResponse, IUser } from '../../../models';
 import { IAuthState } from '../../types/authTypes';
 import { RootState } from '../../store';
 import { loadStorage } from '../../../utils';
@@ -68,7 +68,7 @@ const authSlice = createSlice({
             state.errorMessage = action.payload as string;
             state.isSuccess = false;
         });
-        builder.addCase(refreshAccessToken.fulfilled, (state, action: PayloadAction<any>) => {
+        builder.addCase(refreshAccessToken.fulfilled, (state, action: PayloadAction<IAccessToken>) => {
             state.accessToken = action.payload.accessToken;
         });
         builder.addCase(refreshAccessToken.rejected, (state, action) => {

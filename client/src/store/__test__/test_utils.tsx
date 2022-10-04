@@ -4,9 +4,9 @@ import type { RenderOptions } from '@testing-library/react'
 import { configureStore } from '@reduxjs/toolkit'
 import type { PreloadedState } from '@reduxjs/toolkit'
 import { Provider } from 'react-redux'
+import { AppStore, RootState } from '@/store/store';
+import { authSlice } from '@store/slices'
 
-import type { AppStore, RootState } from '../store'
-import { authSlice } from '../slices'
 // As a basic setup, import your same slice reducers
 
 // This type interface extends the default options for render from RTL, as well

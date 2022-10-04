@@ -1,6 +1,6 @@
 import axios from 'axios';
-import { IQuiz } from '../../models';
-import { baseUrl } from '../../utils';
+import { IQuiz } from '@/models';
+import { baseUrl } from '@/utils';
 
 const getAllQuiz = (userId: string | null): Promise<Array<IQuiz>> =>
     axios.get(`${baseUrl}/api/quizzes/`, { params: { id: userId } }).then((res) => res.data);

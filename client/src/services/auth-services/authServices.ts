@@ -1,6 +1,6 @@
 import axios from 'axios';
-import { ILoginResponse, IUser } from '../../models';
-import { baseUrl } from '../../utils/baseUrl/getBaseUrl';
+import { ILoginResponse, IUser } from '@/models';
+import { baseUrl } from '@/utils';
 
 const login = (username: string, password: string): Promise<ILoginResponse> =>
     axios.post(`${baseUrl}/api/auth/login`, { username, password }).then((res) => res.data);

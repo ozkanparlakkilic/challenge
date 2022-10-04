@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import ContentLayout from '../ContentLayout/ContentLayout';
+import { ContentLayout } from '@/layouts';
 
 describe('Renderings', () => {
     it('should render the child component', () => {

@@ -1,8 +1,8 @@
 import React from 'react';
 import './QuizItem.css';
 import { useNavigate } from 'react-router-dom';
-import DateCard from '../../../components/DateCard/DateCard';
-import { IQuiz } from '../../../../../models';
+import { IQuiz } from '@/models';
+import { DateCard } from '@/pages/Quiz/components';
 
 interface QuizItemProps {
     quiz: IQuiz;

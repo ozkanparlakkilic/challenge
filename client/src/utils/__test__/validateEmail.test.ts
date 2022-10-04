@@ -1,4 +1,4 @@
-import validateEmail from '../inputValueCheck/validateEmail';
+import { validateEmail } from '@/utils';
 
 describe('Validate Email', () => {
     it('validate email function should pass on correct input', () => {

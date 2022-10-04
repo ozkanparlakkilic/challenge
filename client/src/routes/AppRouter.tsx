@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react'
 import { BrowserRouter as Router } from 'react-router-dom';
-import App from '../App';
-import { useAuth } from '../hooks/useAuth';
-import { useRequestInterceptor } from '../hooks/useRequestInterceptor';
-import { useResponseInterceptor } from '../hooks/useResponseInterceptor';
+import App from '@/App';
+import { useAuth } from '@hooks/useAuth';
+import { useRequestInterceptor } from '@hooks/useRequestInterceptor';
+import { useResponseInterceptor } from '@hooks/useResponseInterceptor';
 
 const AppRouter = () => {
 

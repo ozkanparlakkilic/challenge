@@ -2,11 +2,11 @@ import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import {
     login as userLogin,
     refreshAccessToken as newAccessTokenWithRefreshToken,
-} from '../../../services/auth-services/authServices';
-import { IAccessToken, ILoginResponse, IUser } from '../../../models';
-import { IAuthState } from '../../types/authTypes';
-import { RootState } from '../../store';
-import { loadStorage } from '../../../utils';
+} from '@services/auth-services/authServices';
+import { IAccessToken, ILoginResponse, IUser } from '@/models';
+import { loadStorage } from '@/utils';
+import { IAuthState } from '@/store/types/authTypes';
+import { RootState } from '@/store/store';
 
 const initialState: IAuthState = {
     user: loadStorage<IUser>('user') ?? null,

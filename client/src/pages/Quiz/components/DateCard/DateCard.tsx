@@ -1,5 +1,5 @@
 import React from 'react';
-import { getMonthName } from '../../../../utils';
+import { getMonthName } from '@/utils';
 import './DateCard.css';
 
 interface DateCardProps {

@@ -1,4 +1,4 @@
-import checkEmptyInputValue from '../inputValueCheck/checkEmptyInputValue';
+import { checkEmptyInputValue } from '@/utils';
 
 describe('Check empty value', () => {
     it('input value not equal ""', () => {

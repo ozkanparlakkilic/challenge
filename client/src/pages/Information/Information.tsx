@@ -1,6 +1,6 @@
 import React from 'react';
-import { Logo, PageTitle } from '../../components/common';
-import { ContentLayout } from '../../layouts';
+import { Logo, PageTitle } from '@/components/common';
+import { ContentLayout } from '@/layouts';
 import { CopyRight, DescriptionWrapper, SiteDescription } from './components';
 import './Information.css';
 

@@ -1,5 +1,5 @@
-import { IUser } from '../../models';
-import loadStorage from '../storage/loadStorage';
+import { IUser } from '@/models';
+import { loadStorage } from '@/utils';
 
 const mockUser: IUser = {
     _id: '',

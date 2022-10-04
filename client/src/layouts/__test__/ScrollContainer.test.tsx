@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import ScrollContainer from '../ScrollContainer/ScrollContainer';
+import { ScrollContainer } from '@/layouts';
 
 describe('Renderings', () => {
     it('should render the child component', () => {

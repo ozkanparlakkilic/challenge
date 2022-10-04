@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 import React from 'react';
-import Home from '../Home';
+import { Home } from '@/pages';
 
 jest.mock("react-router-dom")
 

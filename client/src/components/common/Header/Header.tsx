@@ -1,10 +1,10 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { BackIcon, HomeIcon } from '../../icons';
+import { BackIcon, HomeIcon } from '@/components/icons';
 import styles from './Header.module.css';
-import Button from '../Button/Button';
-import { useAuth } from '../../../hooks/useAuth';
-import { useLogout } from '../../../hooks/useLogout';
+import { useAuth } from '@/hooks/useAuth';
+import { useLogout } from '@/hooks/useLogout';
+import { Button } from '@components/common';
 
 const Header = () => {
     const navigate = useNavigate();

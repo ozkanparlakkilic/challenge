@@ -1,5 +1,5 @@
-import { useAppSelector } from '../store/hooks';
-import { selectAccessToken, selectUserId, selectIsSuccess, selectRefreshToken } from '../store/slices/auth/authSlice';
+import { useAppSelector } from '@store/hooks';
+import { selectAccessToken, selectUserId, selectIsSuccess, selectRefreshToken } from '@store/slices/auth/authSlice';
 import { useEffect, useMemo } from 'react';
 
 export const useAuth = () => {

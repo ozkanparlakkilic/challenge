@@ -10,9 +10,9 @@ import {
     LeaderBoardImage,
     QuestionImage,
     QuizImage,
-} from '../../assets';
-import { ImageCard } from '../../components/common';
-import { ContentLayout } from '../../layouts';
+} from '@/assets';
+import { ImageCard } from '@/components/common';
+import { ContentLayout } from '@/layouts';
 import styles from './Home.module.css';
 
 const Home = () => {

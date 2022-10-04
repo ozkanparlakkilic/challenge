@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import MainLayout from '../MainLayout/MainLayout';
+import { MainLayout } from '@/layouts';
 
 describe('Renderings', () => {
     it('should render the child component', () => {

@@ -1,4 +1,4 @@
-import IUser from '../user/IUser';
+import { IUser } from '@/models';
 
 export default interface IQuiz {
     _id: string;

@@ -1,6 +1,6 @@
 import axios from 'axios';
-import { useAppDispatch } from '../store/hooks';
-import { refreshAccessToken } from '../store/slices/auth/authSlice';
+import { useAppDispatch } from '@store/hooks';
+import { refreshAccessToken } from '@store/slices/auth/authSlice';
 import { useAuth } from './useAuth';
 
 export const useResponseInterceptor = () => {

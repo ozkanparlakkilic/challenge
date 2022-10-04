@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { Loading, PageTitle } from '../../../components/common';
-import { useAuth } from '../../../hooks/useAuth';
-import { ContentLayout, ScrollContainer } from '../../../layouts';
-import { IQuiz } from '../../../models';
-import { getAllQuiz } from '../../../services/quiz-services/quizService';
+import { Loading, PageTitle } from '@/components/common';
+import { useAuth } from '@/hooks/useAuth';
+import { ContentLayout, ScrollContainer } from '@/layouts';
+import { IQuiz } from '@/models';
+import { getAllQuiz } from '@/services/quiz-services/quizService';
 import { QuizItem, QuizList } from './components';
 
 const Quizzes = () => {

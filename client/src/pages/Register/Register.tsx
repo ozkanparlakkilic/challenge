@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Button, Form, Input, Logo } from '../../components/common';
-import { AuthLayout, ContentLayout } from '../../layouts';
-import { IUserSignInCredendials } from '../../models';
-import { register } from '../../services/auth-services/authServices';
-import { checkEmptyInputValue, validateEmail } from '../../utils';
+import { Button, Form, Input, Logo } from '@components/common';
+import { AuthLayout, ContentLayout } from '@/layouts';
+import { IUserSignInCredendials } from '@/models';
+import { register } from '@/services/auth-services/authServices';
+import { checkEmptyInputValue, validateEmail } from '@/utils';
 
 const initialUserSignInCredendials = {fullname: '', username: '', email: '', password: ''}
 

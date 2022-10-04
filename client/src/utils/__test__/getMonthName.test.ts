@@ -1,4 +1,4 @@
-import getMonthName from '../date/getMonthName';
+import { getMonthName } from '@/utils';
 
 const monthNames = [
     'January',

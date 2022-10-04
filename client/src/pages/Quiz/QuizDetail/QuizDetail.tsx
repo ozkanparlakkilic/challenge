@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { Button, Loading, PageTitle } from '../../../components/common';
-import { ContentLayout } from '../../../layouts';
-import { IQuiz } from '../../../models';
-import { getQuizDetail } from '../../../services/quiz-services/quizService';
-import { DateCard } from '../components';
+import { Button, Loading, PageTitle } from '@/components/common';
+import { ContentLayout } from '@/layouts';
+import { IQuiz } from '@/models';
+import { getQuizDetail } from '@/services/quiz-services/quizService';
 import { QuizDescription, QuizTitle, QuizDurationBox, QuizDetailContainer } from './components';
 import './QuizDetail.css';
+import { DateCard } from '@pages/Quiz/components';
 
 const QuizDetail = () => {
     const [loading, setLoading] = useState<boolean>(false);

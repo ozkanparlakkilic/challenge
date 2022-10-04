@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Button, Form, Input, Logo } from '../../components/common';
-import { useAuth } from '../../hooks/useAuth';
-import { AuthLayout, ContentLayout } from '../../layouts';
-import { IUserLoginCredendials } from '../../models';
-import { useAppDispatch } from '../../store/hooks';
-import { login } from '../../store/slices/auth/authSlice';
-import { checkEmptyInputValue } from '../../utils';
+import { Button, Form, Input, Logo } from '@/components/common';
+import { useAuth } from '@/hooks/useAuth';
+import { AuthLayout, ContentLayout } from '@/layouts';
+import { IUserLoginCredendials } from '@/models';
+import { useAppDispatch } from '@/store/hooks';
+import { login } from '@/store/slices/auth/authSlice';
+import { checkEmptyInputValue } from '@/utils';
 
 const initialUserLoginCredentials = {username: '', password: ''}
 

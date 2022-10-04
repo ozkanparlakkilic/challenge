@@ -4,6 +4,7 @@ interface IAuthState {
     user: IUser | null;
     userId: string | null;
     accessToken: string | null;
+    refreshToken: string | null;
     isSuccess: boolean;
     errorMessage: string | null;
 }

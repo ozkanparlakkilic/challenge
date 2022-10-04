@@ -16,4 +16,12 @@ const register = (fullname: string, username: string, email: string, password: s
         .then((res) => res.data)
         .catch((err) => console.log(err));
 
-export { login, register };
+const refreshAccessToken = (refreshToken: string | null) =>
+    axios
+        .post(`${baseUrl}/api/auth/token`, {
+            refreshToken,
+        })
+        .then((res) => res.data)
+        .catch((err) => console.log(err));
+
+export { login, register, refreshAccessToken };

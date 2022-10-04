@@ -74,12 +74,15 @@ const tokenController = asyncHandler(async (req, res) => {
     if (refreshToken) {
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
-        jwt.verify(refreshToken, `${process.env.REFRESH_TOKEN_SECRET}`, (err: any, userId: string) => {
+        jwt.verify(refreshToken, `${process.env.REFRESH_TOKEN_SECRET}`, async (err: any, userId: string) => {
             if (err) {
                 return res.status(401).send({ message: 'Token is not valid' });
             }
-            const newAccessToken: Promise<IAccessToken> = generateAccessToken(userId);
-            return res.status(200).json(newAccessToken);
+            const { accessToken } = await generateAccessToken(userId).then((response: IAccessToken) => {
+                return response;
+            });
+
+            return res.status(200).json({ accessToken: accessToken });
         });
     } else {
         res.status(401).send({

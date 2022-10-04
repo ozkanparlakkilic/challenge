@@ -1,3 +1,4 @@
+import jwt from 'jsonwebtoken';
 import asyncHandler from 'express-async-handler';
 import { IAccessToken, IRefreshToken } from '../../@types/token/tokenTypes';
 import { ACCESS_TOKEN_COOKIE_OPTIONS, REFRESH_TOKEN_COOKIE_OPTIONS, TOKEN_ACCESS_KEYS } from '../../constants/contants';
@@ -43,13 +44,17 @@ const loginController = asyncHandler(async (req, res) => {
             res.status(400).json({ message: 'Invalid password' });
         });
 
-        const accessToken = await generateAccessToken(user._id.toString()).then((response: IAccessToken) => {
-            return response;
-        });
+        const { accessToken }: IAccessToken = await generateAccessToken(user._id.toString()).then(
+            (response: IAccessToken) => {
+                return response;
+            },
+        );
 
-        const refreshToken = await generateRefreshToken(user._id.toString()).then((response: IRefreshToken) => {
-            return response;
-        });
+        const { refreshToken }: IRefreshToken = await generateRefreshToken(user._id.toString()).then(
+            (response: IRefreshToken) => {
+                return response;
+            },
+        );
 
         res.cookie(TOKEN_ACCESS_KEYS.USER_ACCESS_KEY, accessToken, ACCESS_TOKEN_COOKIE_OPTIONS);
         res.cookie(TOKEN_ACCESS_KEYS.USER_REFRESH_KEY, refreshToken, REFRESH_TOKEN_COOKIE_OPTIONS);
@@ -62,4 +67,25 @@ const loginController = asyncHandler(async (req, res) => {
     }
 });
 
-export { registerController, loginController };
+const tokenController = asyncHandler(async (req, res) => {
+    const { body } = req;
+    const { refreshToken } = body;
+
+    if (refreshToken) {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        jwt.verify(refreshToken, `${process.env.REFRESH_TOKEN_SECRET}`, (err: any, userId: string) => {
+            if (err) {
+                return res.status(401).send({ message: 'Token is not valid' });
+            }
+            const newAccessToken: Promise<IAccessToken> = generateAccessToken(userId);
+            return res.status(200).json(newAccessToken);
+        });
+    } else {
+        res.status(401).send({
+            message: 'Auth failed',
+        });
+    }
+});
+
+export { registerController, loginController, tokenController };

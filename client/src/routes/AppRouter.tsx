@@ -1,29 +1,23 @@
-import axios, { AxiosRequestConfig } from 'axios';
-import React, { useCallback, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { BrowserRouter as Router } from 'react-router-dom';
 import App from '../App';
 import { useAuth } from '../hooks/useAuth';
+import { useRequestInterceptor } from '../hooks/useRequestInterceptor';
+import { useResponseInterceptor } from '../hooks/useResponseInterceptor';
 
 const AppRouter = () => {
 
-  const { loggedUser: { accessToken } } = useAuth();
-
-  const fetchPreAppRunData = useCallback(async () => {
-    try {
-      axios.interceptors.request.use((config: AxiosRequestConfig) => {
-        if (config.headers) {
-          config.headers.Authorization = 'Bearer ' + accessToken
-        }
-        return config
-      })
-    } catch (error) {
-      console.log(error)
-    }
-  }, [accessToken])
+  const requestInterceptor = useRequestInterceptor();
+  const responseInterceptor = useResponseInterceptor();
+  const { loggedUser: { accessToken } } = useAuth()
 
   useEffect(() => {
-    fetchPreAppRunData()
-  }, [accessToken, fetchPreAppRunData])
+    requestInterceptor()
+  }, [accessToken, requestInterceptor])
+  
+  useEffect(() => {
+    responseInterceptor()
+  }, [responseInterceptor]);
 
   return (
     <Router>

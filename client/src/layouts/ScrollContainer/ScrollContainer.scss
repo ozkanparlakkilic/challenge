@@ -1,0 +1,9 @@
+@import '@/styles/scss/_variables';
+@import '@/styles/scss/_mixins';
+
+.scroll {
+    overflow-y: auto;
+    height: $fullHeight;
+    width: $fullWidth;
+    @include scroll;
+}

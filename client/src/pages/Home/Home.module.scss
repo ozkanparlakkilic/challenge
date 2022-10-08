@@ -1,0 +1,20 @@
+@import '@/styles/scss/_variables';
+@import '@/styles/scss/_mixins';
+
+.homepage_wrapper {
+    width: 80%;
+    flex-wrap: wrap;
+    @include flex;
+
+    @include large {
+
+        width: $fullWidth;
+        overflow-y: auto;
+        @include flex-start-horiz;
+        @include scroll;
+
+        .extra_content_layout_style {
+            justify-content: flex-start;
+        }
+    }
+}

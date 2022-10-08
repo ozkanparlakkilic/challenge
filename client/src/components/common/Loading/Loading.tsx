@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaSpinner } from 'react-icons/fa';
-import './Loading.css';
+import styles from './Loading.module.scss';
 
 interface LoadingProps {
     style?: Object;
@@ -11,7 +11,7 @@ const Loading = (props: LoadingProps) => {
     const { style, classname } = props;
 
     return (
-        <div className={`${classname} d-flex justify-content-center align-items-center h-100`} style={style}>
+        <div className={`${classname} ${styles.loading_box}`} style={style}>
             <FaSpinner className="fa-spin spinner" />
         </div>
     );

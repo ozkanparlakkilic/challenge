@@ -1,0 +1,50 @@
+@import '@styles/scss/_mixins';
+
+.quiz_item {
+    width: 80%;
+    max-width: 1000px;
+    border: 1px solid #cccccc;
+    margin-top: 50px;
+    border-radius: 20px;
+    -webkit-box-shadow: 3px 3px 10px 0px rgba(138, 136, 138, 1);
+    -moz-box-shadow: 3px 3px 10px 0px rgba(138, 136, 138, 1);
+    box-shadow: 3px 3px 10px 0px rgba(138, 136, 138, 1);
+    background-color: #f5f5f5;
+    cursor: pointer;
+    color: #4a4a4a;
+    @include flex-center-horiz;
+
+    .quiz_title_box {
+        @include flex-center-column;
+        @include flex-1;
+        align-items: flex-start;
+        margin: 0 20px;
+
+        .quiz_title,
+        .quiz_description {
+            margin: 10px 0;
+            text-align: left;
+        }
+
+        .quiz_duration_box {
+            @include flex-center-vert;
+
+            .quiz_duration {
+                font-weight: 500;
+                font-size: 22px;
+                margin: 0 10px;
+                color: #fc2d2d;
+            }
+        }
+    }
+
+    .date_card_box {
+        @include flex-center-vert;
+        @include flex-1;
+        justify-content: flex-end;
+    }
+
+    &:last-child {
+        margin-bottom: 50px;
+    }
+}

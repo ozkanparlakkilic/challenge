@@ -1,5 +1,5 @@
 import React from 'react';
-import './ScrollContainer.css';
+import './ScrollContainer.scss';
 
 interface ScrollContainerProps {
     children: React.ReactNode;

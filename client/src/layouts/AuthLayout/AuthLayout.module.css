@@ -1,9 +1,0 @@
-.auth_layout {
-    background-color: #e5e2e2;
-    border-radius: 20px;
-    width: 400px;
-    height: 600px;
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
-}

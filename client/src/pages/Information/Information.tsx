@@ -2,7 +2,7 @@ import React from 'react';
 import { Logo, PageTitle } from '@/components/common';
 import { ContentLayout } from '@/layouts';
 import { CopyRight, DescriptionWrapper, SiteDescription } from './components';
-import './Information.css';
+import styles from './Information.module.scss';
 
 const Information = () => {
     return (
@@ -10,7 +10,7 @@ const Information = () => {
             <PageTitle title="Information" />
             <ContentLayout>
                 <DescriptionWrapper>
-                    <Logo classname='logo-box' width='200px' height='140px' />
+                    <Logo classname={`${styles.logo_box}`} width='200px' height='140px' />
                     <SiteDescription />
                 </DescriptionWrapper>
                 <CopyRight />

@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './Logo.module.scss';
 
 interface LogoProps {
     classname?: string | undefined,
@@ -17,7 +18,7 @@ const Logo = ({classname,style,width,height}:LogoProps) => {
                 src="https://upload.wikimedia.org/wikipedia/commons/d/db/Challenge_Logo.png"
                 alt="Challenge Me"
                 style={style}
-                className={`${classname ?? ''}`}
+                className={`${classname ?? ''} ${styles.logo}`}
             />
         </div>
     );

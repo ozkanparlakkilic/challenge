@@ -1,5 +1,5 @@
 import React from 'react'
-import './QuizDetailContainer.css'
+import styles from './QuizDetailContainer.module.scss'
 
 interface QuizDetailContainerProps {
     children: React.ReactNode
@@ -7,7 +7,7 @@ interface QuizDetailContainerProps {
 
 const QuizDetailContainer = ({children}:QuizDetailContainerProps) => {
   return (
-    <div className='quiz-detail-container'>{children}</div>
+    <div className={`${styles.quiz_detail_container}`}>{children}</div>
   )
 }
 

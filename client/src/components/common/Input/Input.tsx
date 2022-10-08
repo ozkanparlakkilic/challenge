@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Input.module.css';
+import styles from './Input.module.scss';
 import { useCallback } from 'react';
 
 interface Props {
@@ -21,7 +21,7 @@ const Input = (props: Props) => {
     },[onChange]);
 
     return (
-        <div className="w-100 d-flex flex-direction-column align-items-start">
+        <div className={`${styles.input_box}`}>
             <input
                 className={`${classname ? classname : ''} ${styles.input}`}
                 placeholder={placeholder}

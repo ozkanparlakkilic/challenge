@@ -1,0 +1,40 @@
+@import '@/styles/scss/_variables';
+@import '@/styles/scss/_mixins';
+
+.input_box {
+    width: $fullWidth;
+    align-items: flex-start;
+    @include flex-column;
+
+    .input {
+        width: 100%;
+        border: none;
+        padding: 1em 0;
+        font-size: 1em;
+        border-bottom: 3px solid white;
+        margin-bottom: 0.5em;
+        font-weight: 200;
+        text-align: start;
+        background: transparent;
+        display: block;
+        line-height: 1.5;
+        color: #495057;
+        background-clip: padding-box;
+        border-radius: 0.25rem;
+    }
+
+    :focus {
+        outline: none;
+        box-shadow: none;
+    }
+
+    :-webkit-autofill :-webkit-autofill:hover,
+    :-webkit-autofill:focus {
+        transition-delay: 9999s !important;
+    }
+
+    .error_text {
+        color: red;
+        margin: 10px 0;
+    }
+}

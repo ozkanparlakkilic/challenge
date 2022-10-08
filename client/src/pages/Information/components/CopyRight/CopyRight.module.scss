@@ -1,6 +1,8 @@
-.copy-right {
+@import '@styles/scss/_variables';
+
+.copy_right {
     margin-top: auto;
     padding: 20px;
     background-color: #dddddd;
-    width: 100%;
+    width: $fullWidth;
 }

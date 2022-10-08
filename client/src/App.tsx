@@ -1,5 +1,5 @@
 import React, { lazy, Suspense } from 'react';
-import './App.css';
+// import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import { Login, QuizDetail, Quizzes, Register } from './pages';
 import { Header, Loading } from './components/common';

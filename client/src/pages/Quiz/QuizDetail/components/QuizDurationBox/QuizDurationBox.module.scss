@@ -1,0 +1,10 @@
+@import '@styles/scss/_mixins';
+
+.quiz_duration_box {
+    @include flex-center-vert;
+
+    .quiz_duration_text {
+        font-size: 20px;
+        padding: 10px 0;
+    }
+}

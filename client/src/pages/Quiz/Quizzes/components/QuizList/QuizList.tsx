@@ -1,5 +1,5 @@
 import React from 'react'
-import './QuizList.css'
+import styles from './QuizList.module.scss';
 
 interface QuizListProps {
     children: React.ReactNode,
@@ -8,7 +8,7 @@ interface QuizListProps {
 
 const QuizList = ({ children, classname }: QuizListProps) => {
   return (
-    <div className={`${classname ?? ''} quiz-list`}>{children}</div>
+    <div className={`${classname ?? ''} ${styles.quiz_list}`}>{children}</div>
   )
 }
 

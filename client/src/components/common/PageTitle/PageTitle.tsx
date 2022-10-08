@@ -1,5 +1,5 @@
 import React from 'react';
-import './PageTitle.css';
+import styles from './PageTitle.module.scss';
 
 interface PageTitleProps {
     title: string;
@@ -8,7 +8,7 @@ interface PageTitleProps {
 const PageTitle = (props: PageTitleProps) => {
     const { title } = props;
     
-    return <div className="page-title">{title}</div>;
+    return <div className={`${styles.page_title}`}>{title}</div>;
 };
 
 export default React.memo(PageTitle);

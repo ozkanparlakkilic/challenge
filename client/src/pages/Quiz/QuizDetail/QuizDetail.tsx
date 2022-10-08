@@ -5,7 +5,7 @@ import { ContentLayout } from '@/layouts';
 import { IQuiz } from '@/models';
 import { getQuizDetail } from '@/services/quiz-services/quizService';
 import { QuizDescription, QuizTitle, QuizDurationBox, QuizDetailContainer } from './components';
-import './QuizDetail.css';
+import styles from './QuizDetail.module.scss';
 import { DateCard } from '@pages/Quiz/components';
 
 const QuizDetail = () => {
@@ -37,7 +37,7 @@ const QuizDetail = () => {
                     <Button
                         title="Start"
                         onClick={() => navigate(`../quiz/${quiz._id}`, { replace: true })}
-                        classname="extra-button-style"
+                        classname={`${styles.extra_button_style}`}
                     />
                 </QuizDetailContainer>
             ) : (

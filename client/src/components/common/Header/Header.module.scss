@@ -1,0 +1,32 @@
+@import '@/styles/scss/_variables';
+@import '@/styles/scss/_mixins';
+
+.header_nav {
+    padding: 5px;
+    background-color: $main-color;
+    height: 70px;
+    justify-content: space-between;
+    @include flex-center-vert;
+
+    .header_left {
+        @include flex-1;
+        @include flex;
+    }
+
+    .header_center {
+        @include flex-center-horiz;
+        @include flex-1;
+
+        .header_title {
+            color: #fff;
+            cursor: pointer;
+        }
+    }
+
+    .header_right {
+        justify-content: flex-end;
+        @include flex-1;
+        @include flex-center-vert;
+    }
+
+}

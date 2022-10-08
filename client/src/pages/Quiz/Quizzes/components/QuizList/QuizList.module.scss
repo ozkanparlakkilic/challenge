@@ -1,0 +1,6 @@
+@import '@styles/scss/_mixins';
+
+.quiz_list {
+    @include flex-center-column;
+    padding-bottom: 50px;
+}

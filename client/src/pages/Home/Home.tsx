@@ -13,7 +13,7 @@ import {
 } from '@/assets';
 import { ImageCard } from '@/components/common';
 import { ContentLayout } from '@/layouts';
-import styles from './Home.module.css';
+import styles from './Home.module.scss';
 
 const Home = () => {
 
@@ -21,7 +21,7 @@ const Home = () => {
 
     return (
         <ContentLayout classname={styles.extra_content_layout_style}>
-            <div className={`d-flex ${styles.homepage_wrapper}`}>
+            <div className={`${styles.homepage_wrapper}`}>
                 <ImageCard source={QuizImage} title="Quiz" onClick={() => navigate("quiz-list")} />
                 <ImageCard source={EducationImage} title="Education" />
                 <ImageCard source={JokerImage} title="Joker" />

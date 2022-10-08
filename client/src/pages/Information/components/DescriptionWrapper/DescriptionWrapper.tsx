@@ -1,5 +1,5 @@
 import React from 'react'
-import './DescriptionWrapper.css'
+import styles from './DescriptionWrapper.module.scss'
 
 interface DescriptionWrapperProps {
     children?: React.ReactNode
@@ -7,7 +7,7 @@ interface DescriptionWrapperProps {
 
 const DescriptionWrapper = ({children}:DescriptionWrapperProps) => {
   return (
-    <div className="description-wrapper">
+    <div className={`${styles.description_wrapper}`}>
         {children}
     </div>
   )

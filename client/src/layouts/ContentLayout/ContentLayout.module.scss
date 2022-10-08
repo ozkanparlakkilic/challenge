@@ -1,0 +1,9 @@
+@import '@/styles/scss/_variables';
+@import '@/styles/scss/_mixins';
+
+.content_layout {
+    overflow: $overflowY;
+    width: $fullWidth;
+    height: $fullHeight;
+    @include flex-center-column;
+}

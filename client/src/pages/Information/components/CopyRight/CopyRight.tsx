@@ -1,9 +1,9 @@
 import React from 'react'
-import './CopyRight.css'
+import styles from './CopyRight.module.scss';
 
 const CopyRight = () => {
   return (
-    <div className="copy-right">Copyright © 2022 by Ozkan Parlakkilic</div>
+    <div className={`${styles.copy_right}`}>Copyright © 2022 by Ozkan Parlakkilic</div>
   )
 }
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './ContentLayout.module.css';
+import styles from './ContentLayout.module.scss';
 
 interface ChildrenProps {
     children: React.ReactNode;

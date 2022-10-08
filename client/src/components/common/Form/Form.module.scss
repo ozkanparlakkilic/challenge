@@ -1,0 +1,8 @@
+@import '@styles/scss/_mixins';
+@import '@styles/scss/_variables';
+
+.form {
+    width: $fullWidth;
+    @include flex-center-column;
+    @include flex-1;
+}

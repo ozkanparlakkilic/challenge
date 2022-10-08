@@ -1,0 +1,7 @@
+@import '@styles/scss/_variables';
+
+.logo_box {
+    border: 2px dashed $main-color;
+    border-radius: 20px;
+    padding: 30px;
+}

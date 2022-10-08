@@ -1,9 +1,9 @@
 import React from 'react';
-import './SiteDescription.css'
+import styles from './SiteDescription.module.scss'
 
 const SiteDescription = () => {
     return (
-        <div className="site-description">
+        <div className={`${styles.site_description}`}>
             In this application, you can solve quizzes, discuss questions, download documents and challenge your friend.
         </div>
     );

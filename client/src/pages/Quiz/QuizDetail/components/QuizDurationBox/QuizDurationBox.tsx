@@ -1,5 +1,5 @@
 import React from 'react';
-import './QuizDurationBox.css';
+import styles from './QuizDurationBox.module.scss';
 
 interface QuizDurationBoxProps {
     duration: number
@@ -7,9 +7,9 @@ interface QuizDurationBoxProps {
 
 const QuizDurationBox = ({duration}:QuizDurationBoxProps) => {
     return (
-        <div className="quiz-duration-box">
+        <div className={`${styles.quiz_duration_box}`}>
             <span>Quiz Duration :</span>
-            <span className="duration-text">{Math.floor(duration)}</span>
+            <span className={`${styles.quiz_duration_text}`}>{Math.floor(duration)}</span>
         </div>
     );
 };

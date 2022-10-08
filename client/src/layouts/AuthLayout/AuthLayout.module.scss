@@ -1,0 +1,11 @@
+@import '@/styles/scss/_variables';
+@import '@/styles/scss/_mixins';
+
+.auth_layout {
+    background-color: $auth-layout-color;
+    border-radius: 20px;
+    width: 400px;
+    height: 600px;
+    padding: 30px;
+    @include flex-column;
+}

@@ -1,0 +1,8 @@
+@import '@styles/scss/_mixins';
+@import '@styles/scss/_variables';
+
+.quiz_detail_container {
+    @include flex-center-column;
+    @include flex-1;
+    width: $fullWidth;
+}

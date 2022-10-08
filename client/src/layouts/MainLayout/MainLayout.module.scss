@@ -1,0 +1,7 @@
+@import '@/styles/scss/_variables';
+@import '@/styles/scss/_mixins';
+
+.main_layout {
+    @include flex-1;
+    overflow-y: $overflowY;
+}

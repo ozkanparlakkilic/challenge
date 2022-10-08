@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './ImageCard.module.css';
+import styles from './ImageCard.module.scss';
 
 interface ImageProps {
     source: string;

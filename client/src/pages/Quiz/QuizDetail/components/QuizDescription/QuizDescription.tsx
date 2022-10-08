@@ -1,5 +1,5 @@
 import React from 'react'
-import './QuizDescription.css'
+import styles from './QuizDescription.module.scss';
 
 interface QuizDescriptionProps {
     description: string
@@ -7,7 +7,7 @@ interface QuizDescriptionProps {
 
 const QuizDescription = ({description}:QuizDescriptionProps) => {
   return (
-    <p className="quiz-text">{description}</p>
+    <p className={`${styles.quiz_text}`}>{description}</p>
   )
 }
 

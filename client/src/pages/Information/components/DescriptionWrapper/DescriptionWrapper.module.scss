@@ -1,0 +1,6 @@
+@import '@styles/scss/_mixins';
+
+.description_wrapper {
+    @include flex-1;
+    @include flex-center-column;
+}

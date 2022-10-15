@@ -12,6 +12,7 @@
             "@pages/*": ["src/pages/*"],
             "@routes/*": ["src/routes/*"],
             "@services/*": ["src/services/*"],
+            "@shared/*": ["src/shared/*"],
             "@store/*": ["src/store/*"],
             "@styles/*": ["src/styles/*"],
             "@utils/*": ["src/utils/*"]

@@ -1,4 +1,5 @@
 @import '@styles/scss/_mixins';
+@import '@styles/scss/_variables';
 
 .quiz_item {
     width: 80%;
@@ -33,7 +34,7 @@
                 font-weight: 500;
                 font-size: 22px;
                 margin: 0 10px;
-                color: #fc2d2d;
+                color: $quiz_duration_color;
             }
         }
     }

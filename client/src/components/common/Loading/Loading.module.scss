@@ -3,7 +3,7 @@
 
 .loading_box {
     .spinner {
-        color: #e87e04;
+        color: $main-color;
         font-size: 50px;
         animation: spin 0.8s infinite linear;
     }

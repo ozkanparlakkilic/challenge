@@ -1,5 +1,7 @@
+@import '@styles/scss/_variables';
+
 .icon {
     font-size: 35px;
-    color: #fff;
+    color: $icon-color;
     cursor: pointer;
 }

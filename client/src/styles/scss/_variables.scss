@@ -6,10 +6,14 @@ $danger: rgb(246, 57, 57);
 $warning: rgb(250, 250, 110);
 $success: rgb(95, 230, 95);
 
-$button-text-color: #fff;
+$button-color: #fff;
+
+$icon-color: #fff;
 
 // $button-background-color: ("dark": #343a40);
 // $button-background-color: ("dark": #343a40);
+
+$quiz_duration_color : #fc2d2d;
 
 $scroll-color: #d6dee1;
 $scroll-hover-color: #a8bbbf;
@@ -32,3 +36,9 @@ $mobile: 480;
 $tablet: 768;
 $large: 1024;
 $desktop: 1280;
+
+// font-size 
+
+$text-small: 12px;
+$text-normal: 16px;
+$text-large: 20px;

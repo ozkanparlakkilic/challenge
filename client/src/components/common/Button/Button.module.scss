@@ -1,3 +1,5 @@
+@import '@styles/scss/_variables';
+
 .btn {
     font-size: 1rem;
     line-height: 1.5rem;
@@ -19,7 +21,7 @@
     background-image: none;
     border: 1px solid transparent;
     border-radius: 5px;
-    color: #fff;
+    color: $button-color;
     background-color: #343a40;
     border-color: #343a40;
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
@@ -34,9 +36,9 @@
 
     &:focus,
     &:hover {
-        color: #fff;
+        color: $button-color;
         background-color: #23272b;
-        border-color: #1d2124;
+        border-color: #23272b;
         text-decoration: none;
     }
 
